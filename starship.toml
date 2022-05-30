@@ -1,0 +1,130 @@
+# ~/.config/starship.toml
+
+# Prompt order
+format = """
+\
+$character\
+$status\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$golang\
+$nodejs\
+$php\
+$python\
+$ruby\
+$rust\
+$jobs\
+$cmd_duration\
+$line_break\
+$battery\
+[╰─➤ ](fg:252)"""
+
+# home modules
+[character]
+success_symbol = "╭─[](fg:#7CF0BD bg:#464D5D)"
+error_symbol = "╭─[](fg:#EB8A90 bg:#464D5D)"
+format = "$symbol"
+
+[status]
+style = "fg:#EB8A90 bg:#464D5D"
+symbol = ""
+format = '[ $status]($style)'
+disabled = false
+
+[username]
+show_always = true
+style_user = '#464D5D'
+format = "[   ](fg:255 bg:$style)[$user ](bold fg:#D5A6BD bg:$style)[](fg:$style)"
+
+[hostname]
+ssh_only = false
+style = '#464D5D'
+format = "[@$hostname](fg:#969696 bg:$style)[](fg:$style)"
+disable = true
+
+[directory]
+#style = "#2F4858"
+style = "#D5A6BD"
+truncation_length  = 3
+truncate_to_repo = true
+truncation_symbol  = "…/"
+read_only = ""
+format = "[](fg:#1C1C1C bg:$style)[$path $read_only](fg:#000000 bg:$style)[](fg:$style)"
+
+[jobs]
+symbol = " "
+style = '#2B59C3'
+format = "[](fg:#1C1C1C bg:$style)[$symbol$number ](fg:255 bg:$style)[](fg:$style)"
+
+[cmd_duration]
+min_time = 50
+style = '#464D5D'
+format = "[](fg:#1C1C1C bg:$style)[祥$duration](bold fg:#E4CC37 bg:$style)[](fg:$style)"
+
+[git_branch]
+symbol = " "
+style = "#33658A"
+format = "[](fg:#1C1C1C bg:$style)[$symbol](fg:255 bg:$style)[$branch](fg:#D5A6BD bg:$style)[](fg:$style)"
+
+[git_commit]
+style = "#33658A"
+format = "\b[ ⚬ $hash$tag](fg:255 bg:$style)[](fg:$style)"
+
+[git_state]
+style = "#33658A"
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICKING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+format = "\b[ \\($state( $progress_current/$progress_total)\\)](fg:#EB8A90 bg:$style)[](fg:$style)"
+
+[git_status]
+style = "#33658A"
+conflicted = "${count} "
+stashed = "${count} "
+deleted = "${count}✘ "
+renamed = "${count}﫦 "
+modified = "${count}↺ "
+staged = "${count} "
+untracked = "${count} "
+disabled = false
+format = '([](fg:#1C1C1C bg:$style)[ $conflicted](bold fg:255 bg:$style)[$stashed](bold fg:#7CF0BD bg:$style)[$deleted](bold fg:#EB8A90 bg:$style)[$renamed](bold fg:#957FEF bg:$style)[$modified](bold fg:#E4CC37 bg:$style)[$staged](bold fg:#7CF0BD bg:$style)[$untracked](bold fg:cyan bg:$style)[](fg:$style))'
+
+[golang]
+style = "#2B59C3"
+symbol = " "
+format = "[](fg:#1C1C1C bg:$style)[$symbol](fg:255 bg:$style)[$version](fg:#D5A6BD bg:$style)[](fg:$style)"
+
+[nodejs]
+style = "#8E7CC3"
+symbol = " "
+format = "[](fg:#1C1C1C bg:$style)[$symbol](fg:255 bg:$style)[$version](fg:#000000 bg:$style)[](fg:$style)"
+
+[php]
+style = "#4F4789"
+symbol = " "
+format = "[](fg:#1C1C1C bg:$style)[$symbol](fg:255 bg:$style)[$version](fg:black bg:$style)[](fg:$style)"
+
+[python]
+style = "#FFE381"
+symbol = " "
+python_binary = "python3"
+format = "[](fg:#1C1C1C bg:$style)[$symbol](fg:255 bg:$style)[$pyenv_prefix$version$virtualenv](fg:black bg:$style)[](fg:$style)"
+
+[ruby]
+style = "#C14953"
+symbol = " "
+format = "[](fg:#1C1C1C bg:$style)[$symbol](fg:255 bg:$style)[$version](fg:255 bg:$style)[](fg:$style)"
+
+[rust]
+style = "#C14953"
+symbol = " "
+format = "[](fg:#1C1C1C bg:$style)[$symbol](fg:255 bg:$style)[$version](fg:255 bg:$style)[](fg:$style)"

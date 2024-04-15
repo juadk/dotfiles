@@ -1,0 +1,39 @@
+indicator
+# no-unlock-indicator
+# daemonize
+indicator-caps-lock
+
+clock
+
+# Add image as background
+image=/home/juadk/Dev/dotfiles/wallpaper/star-lord.jpg
+
+# Fade in time
+fade-in=1
+
+# Background effects
+# effect-blur=20x6
+effect-greyscale
+# effect-pixelate=5
+#
+scaling=fill
+font=UbuntuMono
+font-size=50
+
+# Ring
+indicator-radius=200
+# line-uses-ring
+line-color=#3b4252
+text-color=#d8dee9
+inside-color=#2e344098
+inside-ver-color=#5e81ac
+line-ver-color=#5e81ac
+#ring-ver-color=#5e81ac98
+ring-ver-color=#f52891cc
+#ring-color=#4c566a
+ring-color=#f52891cc
+#key-hl-color=#5e81ac
+key-hl-color=#00e2fffc
+separator-color=#4c566a
+layout-text-color=#eceff4
+line-wrong-color=#d08770

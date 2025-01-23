@@ -3,7 +3,7 @@ if status is-interactive
 end
 
 export PATH="$PATH /opt/homebrew/bin" 
-source /opt/homebrew/share/fish/vendor_completions.d/asdf.fish
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
 /opt/homebrew/bin/fzf --fish | source
 /opt/homebrew/bin/starship init fish | source
 

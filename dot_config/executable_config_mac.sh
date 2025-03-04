@@ -1,4 +1,5 @@
 GITHUB_USERNAME=juadk
+ASDF=/opt/homebrew/bin/asdf
 
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -16,32 +17,29 @@ chezmoi apply
 # Install packages from homebrew using dump file
 brew bundle --file=$HOME/.config/Brewfile 
 
-# Fish configuration
-echo -e "\nsource "(brew --prefix asdf)"/libexec/asdf.fish" >> ~/.config/fish/config.fish
-
 ##############################
 # Install packages with asdf #
 ##############################
 
 # Install Golang with asdf
-asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
-asdf install golang latest
-asdf global golang latest
+$ASDF plugin add golang https://github.com/asdf-community/asdf-golang.git
+$ASDF install golang latest
+$ASDF global golang latest
 
 # Install nodejs with asdf
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs latest
-asdf global nodejs latest
+$ASDF plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+$ASDF install nodejs latest
+$ASDF global nodejs latest
 
 # Install yarn with asdf
-asdf plugin add yarn https://github.com/twuni/asdf-yarn.git
-asdf install yarn latest
-asdf global yarn latest
+$ASDF plugin add yarn https://github.com/twuni/asdf-yarn.git
+$ASDF install yarn latest
+$ASDF global yarn latest
 
 # Install Python with asdf
-asdf plugin add python https://github.com/danhper/asdf-python.git
-asdf install python latest
-asdf global python latest
+$ASDF plugin add python https://github.com/danhper/asdf-python.git
+$ASDF install python latest
+$ASDF global python latest
 
 # Install Fisher plugin manager
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
